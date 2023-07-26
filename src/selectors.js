@@ -10,6 +10,7 @@ const createSelectors = (structure) => {
 
   const getRouter = state => {
     const router = toJS(getIn(state, ['router']))
+    console.log("connected-reat-router check", router, state)
     if (!isRouter(router)) { throw 'Could not find router reducer in state tree, it must be mounted under "router"' }
     return router
   }
