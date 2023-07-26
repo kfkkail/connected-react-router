@@ -3,7 +3,7 @@ import { Iterable } from 'immutable'
 import plainGetIn from '../plain/getIn'
 
 const getIn = (state, path) =>
-  Iterable.isIterable(state)
+  Iterable.isIterable(state) || Record.isRecord(value)
     ? state.getIn(path)
     : plainGetIn(state, path)
 
